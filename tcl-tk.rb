@@ -58,6 +58,9 @@ class TclTk < Formula
           system "make install-private-headers"
           ln_s bin+'wish8.6', bin+'wish'
         end
+
+        # Private header required by some external modules, i.e. togl
+        include.install 'generic/tkFont.h'
       end
     end
   end
